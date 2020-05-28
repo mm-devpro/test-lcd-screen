@@ -1,6 +1,8 @@
 # test-lcd-screen
 test for bee buzziness
 
+## Enoncé
+
 Affichage sur écran LCD
 
  
@@ -34,3 +36,5 @@ Donc, la grille correspondante au nombre 910 serait :
  
 
 Un programme en ligne de commandes permettra d’exécuter le résultat de ton travail.
+
+## use "node ./command-line/get-input-from-console.js" as a command line to input a value 
