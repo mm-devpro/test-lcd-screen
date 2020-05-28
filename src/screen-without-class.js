@@ -14,7 +14,7 @@
 // ]
 //
 // // 1) Get the input and split it to work on each number of the initial input
-// export const getInput = (input: number) => {
+// const getInput = (input: number) => {
 //
 //     let numbersToDisplay: Array<string> = (""+input).split('');
 //     return numbersToDisplay
@@ -22,7 +22,7 @@
 // }
 //
 // // 2) Create an element for one number (= a 3x3 box)
-// export const displayElement = (el:string) => {
+// const displayElement = (el:string) => {
 //     return numbers[+el].split('');
 // }
 //
