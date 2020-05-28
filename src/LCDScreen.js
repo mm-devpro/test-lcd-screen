@@ -17,8 +17,8 @@ var LCDScreen = /** @class */ (function () {
     function LCDScreen() {
         var _this = this;
         // 1) Get the input and split it to work on each number of the initial input
-        this.getInput = function (input) {
-            if (!input || isNaN(input))
+        this.getInputIntoArray = function (input) {
+            if (!input || isNaN(+input))
                 return console.error(input + " is not a number");
             var numbersToDisplay = ("" + input).split('');
             return numbersToDisplay;
@@ -29,10 +29,14 @@ var LCDScreen = /** @class */ (function () {
         };
         // 3) bring all numbers together in order to display the full input side by side
         this.displayGrid = function (input) {
-            if (!input || isNaN(input))
+            // Check if input is a number
+            if (!input || isNaN(+input))
                 return console.error(input + " is not a number");
-            var numImputed = _this.getInput(input);
+            // Store the input into array thanks to getInputIntoArray method
+            var numImputed = _this.getInputIntoArray(input);
+            // Create an element for each number of the input and store it into the gridElement
             var gridElement = numImputed.map(function (n) { return _this.createElement(n); });
+            // Loop over the gridElement to be able to display each of the three lines one by one
             var firstLine = [];
             var secondLine = [];
             var thirdLine = [];
@@ -41,11 +45,12 @@ var LCDScreen = /** @class */ (function () {
                 secondLine.push("" + gridElement[i][3] + gridElement[i][4] + gridElement[i][5]);
                 thirdLine.push("" + gridElement[i][6] + gridElement[i][7] + gridElement[i][8]);
             }
+            // display numbers side by side
             console.log(firstLine.join(' '));
             console.log(secondLine.join(' '));
             console.log(thirdLine.join(' '));
         };
-        this.getInput = this.getInput.bind(this);
+        this.getInputIntoArray = this.getInputIntoArray.bind(this);
         this.createElement = this.createElement.bind(this);
         this.displayGrid = this.displayGrid.bind(this);
     }

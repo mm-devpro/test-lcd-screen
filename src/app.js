@@ -5,8 +5,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.app = void 0;
 var express_1 = __importDefault(require("express"));
-//import {displayGrid} from "./screen";
-var LCDScreen = require('./LCDScreen');
 exports.app = express_1.default();
 exports.app.get("/", function (req, res, next) {
     res.status(200).json({
@@ -14,6 +12,4 @@ exports.app.get("/", function (req, res, next) {
         message: 'hello world'
     });
 });
-var screen = new LCDScreen;
-screen.displayGrid(1234567890);
 //# sourceMappingURL=app.js.map

@@ -1,8 +1,5 @@
 import express, { NextFunction, Request, Response } from 'express';
 
-//import {displayGrid} from "./screen";
-const LCDScreen = require('./LCDScreen')
-
 export const app = express();
 
 app.get("/", (req:Request, res:Response, next:NextFunction) => {
@@ -12,6 +9,3 @@ app.get("/", (req:Request, res:Response, next:NextFunction) => {
     });
 })
 
-const screen = new LCDScreen
-
-screen.displayGrid(1234567890)
