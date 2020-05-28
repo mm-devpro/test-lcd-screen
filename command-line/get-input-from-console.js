@@ -8,6 +8,7 @@ const prompt_attributes = [
   {
     // The fist input text is assigned to username variable.
     name: 'number',
+    message: 'choose a number'
   },
 ]
 
@@ -20,7 +21,7 @@ prompt.get(prompt_attributes, function (err, result) {
     console.log(err);
     return 1;
   } else {
-    console.log('Command-line received data:');
+    console.log('Command-line input received:');
 
     // Get user input from result object.
     let number = result.number;
